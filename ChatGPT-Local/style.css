@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+text-wrap: balance;
+}
+
+img,video, svg {
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: system-ui;
+  background-color: azure;
+  display: grid;
+  place-content: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+
+main {
+  width: 400px;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+
+  overflow-y: auto;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style: none;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 8px;
+  margin: 4px 0;
+
+  > span {
+    font-weight: 500;
+    width: 36px;
+    height: 36px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  > p {
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  &.user {
+    align-self: flex-end;
+    align-items: flex-end;
+    border-radius: 8px;
+    span, p {
+      background-color: #f0f0f0;
+    }
+  }
+
+  &.bot {
+    align-self: flex-start;
+    align-items: flex-start;
+    border-radius: 8px;
+    span, p {
+      background-color: #d5f7de;
+    }
+  }
+}
+
+form {
+  display: flex;
+
+  input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+
+  button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #0070f3;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0053b3;
+    } 
+  }
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition: none;
+  }
+}
