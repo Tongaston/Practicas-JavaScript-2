@@ -7,8 +7,10 @@ const $messages = document.querySelector('ul')
 const $container = document.querySelector('main')
 const $button = document.querySelector('button')
 const $loader = document.querySelector('.loader')
+const $loading = document.querySelector('.loading')
 
 let messages = []
+let end = false
 
 const SELECTED_MODEL = 'gemma-2b-it-q4f32_1-MLC'
 
@@ -18,8 +20,15 @@ const engine = await CreateWebWorkerMLCEngine(
   {
     initProgressCallback: (info) => {
       $loader.textContent = `${info.text}`
-      if (info.progress === 1) {
+      if (info.progress === 1 && !end) {
+        end = true
+        $loading?.parentNode?.removeChild($loading)
         $button.removeAttribute('disabled')
+        addMessage(
+          '¡Hola! Soy un ChatGPT que se ejecuta completamente en tu navegador. ¿En qué puedo ayudarte hoy?',
+          'bot'
+        )
+        $input.focus()
       }
     },
   }

@@ -147,6 +147,29 @@ small {
   width: 400px;
 }
 
+.loading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+h5 {
+  opacity: 0.6;
+}
+
+.loader-spinner {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #000 #0000;
+  animation: l1 1s infinite;
+}
+@keyframes l1 {to{transform: rotate(.5turn)}}
+
 
 
 @media (prefers-reduced-motion: reduce) {
